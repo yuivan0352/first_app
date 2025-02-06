@@ -15,7 +15,5 @@ class Centered extends StatelessWidget {
         ),
       ),
     );
-
-    throw UnimplementedError();
   }
 }

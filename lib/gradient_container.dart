@@ -2,15 +2,17 @@ import 'package:flutter/material.dart';
 import 'centered.dart';
 
 class GradientContainer extends StatelessWidget {
-  const GradientContainer({super.key});
+  GradientContainer(this.startAlignment, this.endAlignment, {super.key});
+  Alignment startAlignment;
+  Alignment endAlignment;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: const BoxDecoration(
+      decoration: BoxDecoration(
         gradient: LinearGradient(
-          begin: Alignment.topLeft,
-          end: Alignment.bottomRight,
+          begin: startAlignment,
+          end: endAlignment,
           colors: <Color>[
             Color.fromARGB(255, 26, 2, 80),
             Color.fromARGB(255, 9, 1, 24)
@@ -19,6 +21,5 @@ class GradientContainer extends StatelessWidget {
       ),
       child: Centered("Hello there!"),
     );
-    throw UnimplementedError();
   }
 }
